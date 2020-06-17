@@ -5,5 +5,7 @@ public class Distributor {
 	private String phone;
 	private Movie movies[] = new Movie[5];
 	private int numberOfMovies;
+	
+	//For commits
 
 }

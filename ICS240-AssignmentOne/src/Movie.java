@@ -59,3 +59,4 @@ public class Movie {
 		return "The movie " + name + " which was directed by " + directorName + " " + genre + " " + earnings;	
 	}
 }
+//for commit
