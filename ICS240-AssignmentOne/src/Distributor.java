@@ -53,5 +53,32 @@ public class Distributor {
 		return movies;
 		
 	}
-
+	
+	public int totalNumMovies() {
+		return numberOfMovies = this.movies.length;
+	}
+	//TODO Complete findTotalEarnings
+	public void findTotalEarnings() {
+		
+	}
+	//TODO Complete comedyEarnings
+	public void comedyEarnings() {
+		
+	}
+	//TODO Complete addEarnings
+	public void addEarnings() {
+		
+	}
+	
+	public boolean equals(Distributor dist) {
+		return this.name.equals(dist.name);
+	}
+	
+	//TODO Finish the toString
+	public String toString() {
+		return "Distributor's name " + name +
+				"\nDistributor address " + address +
+				"\nDistributor phone number " + phone +
+				"\n\nDistributor Movie count " + movies.length;
+	}
 }
