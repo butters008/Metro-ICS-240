@@ -14,8 +14,20 @@ public class Distributor {
 	}
 	
 	public Distributor(Movie[] movies) {
-		movies = new Movie[] {null, null, null, null, null};
+		movies = null;
+		for(int i=0;i<5;i++)
+		{
+		    this.movies[i] = null;
+		}
 	}
+	
+//	public Distributor() {
+//		movies = null;
+//		for(int i=0;i<5;i++)
+//		{
+//			this.movies[i] = null;
+//		}
+//	}
 
 	public String getName() {
 		return name;
@@ -41,21 +53,38 @@ public class Distributor {
 		this.phone = phone;
 	}
 	
-	public Movie[] getMovies() {
+	public Movie[] getMovies(Distributor dist) {
 		return Arrays.copyOf(movies, numberOfMovies);
 	}
 	
-	public Movie[] addMovie(Movie movie) {
+	public Movie[] addMovie(Movie m) {
+		//this.movies = m;
 		return movies;		
 	}
 	
-	public Movie[] addMovie(String name, String directorName, int genre, int earnings) {
-		return movies;
+	public void addMovie(String name, String directorName, int genre, double earnings) {
+		//For now we are using 5 since we know how big, 
+		//change  to look for array length for future use to avoid bug
+		for (int i = 0; i<5; i++) {
+			if (movies[i] != null) {
+				movies[i] = new Movie(name, directorName, genre, earnings);
+				System.out.println("We are in the if");
+				System.out.println(i);
+				System.out.println("");
+			}
+			else {
+				movies[i] = new Movie(name, directorName, genre, earnings);
+				System.out.println("We are in the else");
+				System.out.println(i);
+				System.out.println(movies[i].toString());
+				break;
+			}
+		}
 		
 	}
 	
 	public int totalNumMovies() {
-		return numberOfMovies = this.movies.length;
+		return this.movies.length;
 	}
 	//TODO Complete findTotalEarnings
 	public void findTotalEarnings() {
@@ -81,4 +110,22 @@ public class Distributor {
 				"\nDistributor phone number " + phone +
 				"\n\nDistributor Movie count " + movies.length;
 	}
+	
+	
+//	public void main (String[] arg) {
+//		
+//		//Movie[] movies2 = new Movie[5];
+//		
+//		
+//		this.addMovie("life", "sssssss", 1, 568425);
+//		this.addMovie("life", "ddd", 1, 568425);
+//		this.addMovie("life", "Keith", 1, 568425);
+//		
+//		for (int i = 0; i < movies.length; i++) {
+//			System.out.println(movies[i].toString());
+//		}
+//		
+//		System.out.println(getMovies());
+//	}
+	
 }

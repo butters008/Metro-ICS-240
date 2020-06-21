@@ -1,5 +1,5 @@
 public class movieDriver {
-	public void main (String[] arg) {
+	public static void main(String[] args) {
 		Movie movie1 = new Movie("Star Wars Episode IV: A New Hope", "Geroge Lucas", 775500000);
 		Movie movie2 = new Movie("Die Hard", "John McTiernan", 141500000);
 		Movie movie3 = new Movie("Tremors", "Ron Underwood", 16000000);
@@ -14,17 +14,43 @@ public class movieDriver {
 		
 		//Testing to make sure that bool can be both true and false
 		Distributor dist3 = new Distributor("Fantasy Movies Inc", "9th Ave South, St. Cloud MN 56301", "3209820546");
-		
-		dist1.addMovie(movie1);
-		dist1.addMovie(movie2);
-		dist1.addMovie(movie3);
-		dist1.addMovie(movie4);
-		dist1.addMovie(movie5);
-		
-		dist2.addMovie(movie7);
-		dist2.addMovie(movie8);
+
+//		Movie[] movie22 = null;
 		
 		
+//		dist1.addMovie(movie22);
+		dist1.addMovie("life", "Keith", 1, 568425);
+//		dist1.addMovie(movie1);
+//		dist1.addMovie(movie2);
+//		dist1.addMovie(movie3);
+//		dist1.addMovie(movie4);
+//		dist1.addMovie(movie5);
+		System.out.println(dist1.getMovies(dist1)); 		
+		
+//		dist2.addMovie(movie7);
+//		dist2.addMovie(movie8);
+//		dist2.addMovie("life", "Keith", 1, 568425);
+		System.out.println("total number of movies of Dist2 " + dist2.totalNumMovies());
+		System.out.println("total number of movies of Dist1 " + dist2.totalNumMovies());
+
+//		System.out.println(dist2);
+//		System.out.println(dist1);
+//		
+//		for(int i = 0; i < dist2.totalNumMovies(); i++) {
+//			System.out.println(dist2.getMovies()); 
+//		}
+//		
+//		for(int i = 0; i < dist1.totalNumMovies(); i++) {
+//			System.out.println(dist1.getMovies()); 
+//		}
+//		
+		//System.out.println(dist2.getMovies());		
+//		
+//		Distributor dist4 = new Distributor(null);
+//		for(int i = 0; i < 5; i++) {
+//			System.out.println(dist4.getMovies());
+//			System.out.println("testing" + null);
+//		}
 		
 	}
 

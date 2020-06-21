@@ -11,6 +11,14 @@ public class Movie {
 		this.earnings = earnings;
 	}
 
+	//Added this to help with Distributor class
+	public Movie(String name2, String directorName2, int genre2, double earnings2) {
+		this.name = name2;
+		this.directorName = directorName2;
+		this.genre = genre2;
+		this.earnings = earnings2;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -59,4 +67,3 @@ public class Movie {
 		return "The movie " + name + " which was directed by " + directorName + " " + genre + " " + earnings;	
 	}
 }
-//for commit
