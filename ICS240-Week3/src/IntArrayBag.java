@@ -10,6 +10,14 @@
  *
  */
 //This was taken from the class ICS240 - Did not write this
+/*
+ * Added the follow methods
+ * public int max()
+ * public int min() //extra credit
+ * public static void sumEven()
+ * public boolean equalsTo()
+ * public static boolean equalsTo()
+ */
 public class IntArrayBag{
 
 	private int[] data;
@@ -105,7 +113,74 @@ public class IntArrayBag{
 
 		return count;
 	}
-
+	
+	//data[] - manyItems
+	public int max() {
+		if(manyItems > 0) {
+			int temp = data[0];	
+			for (int i = 1; i < manyItems; i++) {
+				if(data[i] > temp) {
+					temp = data[i];
+				}
+			}
+			return temp;
+		}
+		else {
+			return -1;
+		}
+	}
+	
+	public int min() {
+		if(manyItems > 0) {
+			int temp = data[0];	
+			for (int i = 1; i < manyItems; i++) {
+				if(data[i] < temp) {
+					temp = data[i];
+				}
+			}
+			return temp;
+		}
+		else {
+			return -1;
+		}
+	}
+	
+	public static int sumEven(IntArrayBag data) {
+		int temp = 0;	
+		for (int i = 0; i < data.size(); i++) {
+			if(data.grab(i) % 2 == 0) {
+				temp += data.grab(i);
+			}
+		}
+		return temp;
+	}
+	
+	public int sumEvens() {
+		int temp = 0;	
+		for (int i = 0; i < manyItems; i++) {
+			if(data[i] % 2 == 0) {
+				temp += data[i];
+			}
+		}
+		return temp;
+	}
+	
+	public static boolean equalsTo(IntArrayBag bag1, IntArrayBag bag2) {
+		if(bag1.size() == bag2.size()) {
+			return true;
+		}else {
+			return false;	
+		}
+	}
+	
+	public boolean equalsTo(IntArrayBag bag1) {
+		if(this.size() == bag1.size()) {
+			return true;
+		}else {
+			return false;	
+		}
+	}
+	
 	/**
 	 * returns a string representation of the bag
 	 */
