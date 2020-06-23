@@ -5,10 +5,10 @@ public class Movie {
 	private double earnings;
 	private int genre;
 	
-	public Movie (String name, String directorName, double earnings) {
+	public Movie (String name, String directorName, int genre) {
 		this.name = name;
 		this.directorName = directorName;
-		this.earnings = earnings;
+		this.genre = genre;
 	}
 
 	//Added this to help with Distributor class
@@ -17,6 +17,10 @@ public class Movie {
 		this.directorName = directorName2;
 		this.genre = genre2;
 		this.earnings = earnings2;
+	}
+	
+	public Movie(Movie m) {
+		
 	}
 
 	public String getName() {
@@ -56,8 +60,15 @@ public class Movie {
 		this.earnings += add;
 	}
 
-	public boolean equals (String name, String directorName, int genre) {
-		if (this.name.equals(name) && this.directorName.equals(directorName) && this.genre == genre) {
+//	public boolean equals (String name, String directorName, int genre) {
+//		if (this.name.equals(name) && this.directorName.equals(directorName) && this.genre == genre) {
+//			return true;
+//		}
+//		return false;
+//	}
+	
+	public boolean equals(Movie m1) {
+		if(this.name.equals(m1.getName()) && this.directorName.equals(m1.getDirectorName()) && this.genre == m1.getGenre()) {
 			return true;
 		}
 		return false;
