@@ -20,14 +20,6 @@ public class Distributor {
 		    this.movies[i] = null;
 		}
 	}
-	
-//	public Distributor() {
-//		movies = null;
-//		for(int i=0;i<5;i++)
-//		{
-//			this.movies[i] = null;
-//		}
-//	}
 
 	public String getName() {
 		return name;
@@ -57,42 +49,68 @@ public class Distributor {
 		return Arrays.copyOf(movies, numberOfMovies);
 	}
 	
-	public Movie[] addMovie(Movie m) {
-		//this.movies = m;
-		return movies;		
-	}
+	public void addMovie(Movie m) {	
+		for(int i = 0; i<5; i++) { //I know the length of array so I can do this for now - not wise I know
+			if (movies[i] == null) {
+				movies[i] = m;
+				break;
+			}
+			//Here just in case
+			else {}
+			}
+		}
 	
 	public void addMovie(String name, String directorName, int genre, double earnings) {
 		//For now we are using 5 since we know how big, 
 		//change  to look for array length for future use to avoid bug
 		for (int i = 0; i<5; i++) {
-			if (movies[i] != null) {
+			if (movies[i] == null) {
 				movies[i] = new Movie(name, directorName, genre, earnings);
-				System.out.println("We are in the if");
-				System.out.println(i);
-				System.out.println("");
-			}
-			else {
-				movies[i] = new Movie(name, directorName, genre, earnings);
-				System.out.println("We are in the else");
-				System.out.println(i);
-				System.out.println(movies[i].toString());
 				break;
 			}
+			//Here just in case
+			else {}
 		}
 		
 	}
 	
 	public int totalNumMovies() {
-		return this.movies.length;
+		numberOfMovies = 0;
+		for (int i = 0; i<5; i++) {
+			if (movies[i] == null) {
+				//Checking to see if the spot is null, if so - move along
+			}
+			else { numberOfMovies++; }
+		}
+		return numberOfMovies;
 	}
 	//TODO Complete findTotalEarnings
-	public void findTotalEarnings() {
-		
+	public double findTotalEarnings() {
+		double totalEarnings = 0.0;
+		for (int i = 0; i<5; i++) {
+			if (movies[i] == null) {
+				//Checking to see if the spot is null, if so - move along
+			}
+			else { 
+				totalEarnings += movies[i].getEarnings();
+			}
+		}
+		return totalEarnings;
 	}
 	//TODO Complete comedyEarnings
-	public void comedyEarnings() {
-		
+	public double comedyEarnings() {
+		double totalEarnings = 0.0;
+		for (int i = 0; i<5; i++) {
+			if (movies[i] == null) {
+				//Checking to see if the spot is null, if so - move along
+			}
+			else {
+				if(movies[i].getGenre() == 0 ) {//Comedy
+					totalEarnings += movies[i].getEarnings();
+				}
+			}
+		}
+		return totalEarnings;
 	}
 	//TODO Complete addEarnings
 	public void addEarnings() {
@@ -127,5 +145,11 @@ public class Distributor {
 //		
 //		System.out.println(getMovies());
 //	}
+	
+	public void print() {
+		for(int i=0; i< movies.length; i++){
+		     System.out.print(movies[i] + " \n");
+		  }		
+	}
 	
 }
