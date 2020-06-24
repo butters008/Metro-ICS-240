@@ -43,11 +43,6 @@ public class Movie {
 		return earnings;
 	}
 
-	//Does not need this in project
-//	public void setEarnings(double earnings) {
-//		this.earnings = earnings;
-//	}
-
 	public int getGenre() {
 		return genre;
 	}
@@ -59,13 +54,6 @@ public class Movie {
 	public void addToEarnings(double add) {
 		this.earnings += add;
 	}
-
-//	public boolean equals (String name, String directorName, int genre) {
-//		if (this.name.equals(name) && this.directorName.equals(directorName) && this.genre == genre) {
-//			return true;
-//		}
-//		return false;
-//	}
 	
 	public boolean equals(Movie m1) {
 		if(this.name.equals(m1.getName()) && this.directorName.equals(m1.getDirectorName()) && this.genre == m1.getGenre()) {
@@ -74,7 +62,28 @@ public class Movie {
 		return false;
 	}
 	
-	public String toString() {
-		return "The movie " + name + " which was directed by " + directorName + " " + genre + " " + earnings;	
+	private String getNumGenre() {
+		String g;
+		if(this.genre == 0) {
+			g = "Comedy";
+		}
+		else if(this.genre == 1) {
+			g = "Action";
+		}
+		else if(this.genre == 2) {
+			g = "Fiction";
+		}
+		else {
+			g = "Not Valid";
+		}
+		return g;
 	}
+	
+	public String toString() {
+	
+		return "The movie " + name + " which was directed by " + directorName + 
+				" \nand the genre is " + this.getNumGenre() + " which made " + earnings + " million";	
+	}
+
+
 }

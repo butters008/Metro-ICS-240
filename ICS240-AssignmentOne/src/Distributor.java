@@ -89,9 +89,11 @@ public class Distributor {
 		double totalEarnings = 0.0;
 		for (int i = 0; i<5; i++) {
 			if (movies[i] == null) {
+				//System.out.println("IF");
 				//Checking to see if the spot is null, if so - move along
 			}
 			else { 
+				//System.out.println("ELSE");
 				totalEarnings += movies[i].getEarnings();
 			}
 		}
@@ -112,44 +114,51 @@ public class Distributor {
 		}
 		return totalEarnings;
 	}
+	
 	//TODO Complete addEarnings
-	public void addEarnings() {
-		
+	public void addEarnings(Movie movie, double earnings ) {
+		for (int i = 0; i<5; i++) {
+			if (movies[i] == null) {
+				//Checking to see if the spot is null, if so - move along
+			}
+			else {
+				if(movies[i].getName().equals(movie.getName())) {
+					movies[i].addToEarnings(earnings);
+				}
+			}
+		}
+		return;
+	}
+	
+	public static double calculateTax(int tax, Distributor d1) {
+		int percentConversion = 100;
+		double taxWholeNumber =  tax;
+		double payTax = taxWholeNumber / percentConversion;
+		return payTax = payTax * d1.findTotalEarnings();
 	}
 	
 	public boolean equals(Distributor dist) {
 		return this.name.equals(dist.name);
 	}
 	
+	
 	//TODO Finish the toString
 	public String toString() {
+
 		return "Distributor's name " + name +
 				"\nDistributor address " + address +
 				"\nDistributor phone number " + phone +
-				"\n\nDistributor Movie count " + movies.length;
+				"\n\nDistributor Movie count " + movies.length +
+				"\n\nHere are all the movies owned by this Distributor\n\n" + this.print();
 	}
 	
-	
-//	public void main (String[] arg) {
-//		
-//		//Movie[] movies2 = new Movie[5];
-//		
-//		
-//		this.addMovie("life", "sssssss", 1, 568425);
-//		this.addMovie("life", "ddd", 1, 568425);
-//		this.addMovie("life", "Keith", 1, 568425);
-//		
-//		for (int i = 0; i < movies.length; i++) {
-//			System.out.println(movies[i].toString());
-//		}
-//		
-//		System.out.println(getMovies());
-//	}
-	
-	public void print() {
+	public String print() {
+		String movieList = "";
 		for(int i=0; i< movies.length; i++){
-		     System.out.print(movies[i] + " \n");
-		  }		
+			if (movies[i] == null) {
+				//Checking to see if the spot is null, if so - move along
+			}else { movieList += movies[i] + " \n\n"; }
+		}
+		return movieList;		
 	}
-	
 }
