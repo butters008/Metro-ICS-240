@@ -1,5 +1,5 @@
 
-public class Paycheck //implements Comparable <Paycheck> 
+public class Paycheck implements Comparable <Paycheck> 
 {
 	private String checkName;
 	private int checkAmount;
@@ -41,39 +41,64 @@ public class Paycheck //implements Comparable <Paycheck>
 		}
 		return false;
 	}
-//	public boolean equals(Paycheck p1) {
-//		if(this.getCheckName().equalsIgnoreCase(p1.getCheckName()) && this.getCheckAmount() == this.getCheckAmount()) {
-//			return true;
-//		}
-//		
-//		return false;
-//	}
+	public boolean equals(Paycheck p1) {
+		if(this.getCheckName().equalsIgnoreCase(p1.getCheckName()) && this.getCheckAmount() == this.getCheckAmount()) {
+			return true;
+		}
+		
+		return false;
+	}
 	
-//	public int compareTo(Paycheck p1) {
-//		if(this.getCheckName().equalsIgnoreCase(p1.getCheckName()) && this.getCheckAmount() == p1.getCheckAmount()) {
-//			System.out.println(this.getCheckName() + " with " + this.getCheckAmount() +
-//					" has the same as " + p1.getCheckName() + " with " + p1.getCheckAmount());
-//			return 0;
-//		}
-//		//Comparing the amount first and then checking for name
-//		else if(this.getCheckAmount() > p1.getCheckAmount()) {
-//			String checkOg = this.getCheckName();
-//			String checkP1 = p1.getCheckName();
-//			
-//			if(checkOg.compareTo(checkP1)) {
-//				System.out.println(this.getCheckName() + " with " + this.getCheckAmount() +
-//						" has less money than " + p1.getCheckName() + " with " + p1.getCheckAmount());
-//				return 1;	
-//			}
-//			
-//		else if(this.getCheckName().equalsIgnoreCase(p1.getCheckName()) || this.getCheckAmount() > p1.getCheckAmount()) {
-//			System.out.println(this.getCheckName() + " with " + this.getCheckAmount() +
-//					" has less money than " + p1.getCheckName() + " with " + p1.getCheckAmount());
-//			return 1;
-//		}
-//		else {
-//			return 2;
-//		}
-//	}
+	//breaking this down
+	public int compareTo(Paycheck p1) {
+
+		//if the name this.name is Adam and p1 is Keith - it would ring -num so return -1 
+		if(this.getCheckName().compareTo(p1.getCheckName()) < 0) {
+			System.out.println("this.object: " + getCheckName() + " is before " + p1.getCheckName());
+			if(this.getCheckAmount() < p1.getCheckAmount()) {
+				System.out.println("this.object: " + getCheckAmount() + " has less than " + p1.getCheckAmount());
+				return -1;
+			}
+			if(this.getCheckAmount() > p1.getCheckAmount()) {
+				System.out.println("this.object: " + getCheckAmount() + " has more than " + p1.getCheckAmount());
+				return 1;
+			}
+			else {
+				System.out.println("this.object: " + getCheckAmount() + " has the same amount " + p1.getCheckAmount());
+				return 1;
+			}
+		}
+		//if the name this.name is Adam and p1 is Keith - it would ring -num so return 1 
+		if(this.getCheckName().compareTo(p1.getCheckName()) > 0) {
+			System.out.println("this.object: " + getCheckName() + " is after " + p1.getCheckName());
+			if(this.getCheckAmount() < p1.getCheckAmount()) {
+				System.out.println("this.object: " + getCheckAmount() + " has less than " + p1.getCheckAmount());				
+				return -1;
+			}
+			else if (this.getCheckAmount() > p1.getCheckAmount()) {
+				System.out.println("this.object: " + getCheckAmount() + " has more than " + p1.getCheckAmount());
+				return 1;
+			}else{
+				System.out.println("this.object: " + getCheckAmount() + " has the same amount " + p1.getCheckAmount());
+				return 1;
+			}			
+		}
+		//If the name are the same
+		else {
+			if(this.getCheckAmount() < p1.getCheckAmount()) {
+				System.out.println("The names are the same for both objects");
+				System.out.println("The amount of this.object " + this.getCheckAmount() + " is less than " + p1.getCheckAmount());
+				return -1;
+			}
+			if(this.getCheckAmount() > p1.getCheckAmount()) {
+				System.out.println("The names are the same for both objects");
+				System.out.println("The amount of this.object " + this.getCheckAmount() + " is more than " + p1.getCheckAmount());
+				return 1;
+			}else{
+				System.out.println("The same name and amount");
+				return 0;
+			}
+		}
+	}
 	
-}
+}//end of the class
