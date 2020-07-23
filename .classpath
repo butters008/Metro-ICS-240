@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="ICS240-AssignmentOne/src"/>
+	<classpathentry kind="src" path="ICS240-AssignmentTwo/src"/>
+	<classpathentry kind="src" path="ICS240-Midterm1/src"/>
+	<classpathentry kind="src" path="ICS240-Week3/src"/>
+	<classpathentry kind="src" path="ICS240-Week4/src"/>
+	<classpathentry kind="src" path="ICS240-Week7/src"/>
+	<classpathentry kind="src" path="ICS240-WeekOne/src"/>
+	<classpathentry kind="src" path="ICS240-WeekTwo/src"/>
+	<classpathentry kind="output" path="ICS240-AssignmentOne/bin"/>
+</classpath>
