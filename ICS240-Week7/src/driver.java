@@ -3,6 +3,21 @@ import java.util.Stack;
 //This is for lecture 5 and driver is code that I wrote for exercise
 //Rest of code was pre-written
 public class driver {
+	
+	public static Integer returnMiddle(Stack<Integer> s1) {
+		int count = 5;
+		Integer middle = null;
+		count = count / 2;
+		
+		while(!s1.isEmpty()) {
+			if(count == 3) {
+				middle = s1.peek();
+				System.out.println(middle);
+			}
+		}
+		
+		return middle;
+	}
 	public static void main(String[] args) {
 		/*
 		 * Answering the first question: Reverse. It should take a stack and return it
@@ -12,11 +27,16 @@ public class driver {
 		
 		Stack<Integer> s1 = new Stack();
 		Stack<Integer> tempStack = new Stack();
+		
+		Stack<Integer> middleStack = new Stack();
+		
 		s1.push(10);
 		s1.push(20);
 		s1.push(30);
 		s1.push(40);
 		s1.push(50);
+		
+		System.out.println(((driver) middleStack).returnMiddle(s1));
 		
 		System.out.println("Oringal Stack Order:\n" + s1 + "\n");
 		
