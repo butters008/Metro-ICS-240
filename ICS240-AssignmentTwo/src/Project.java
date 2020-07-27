@@ -25,6 +25,27 @@ public class Project {
 		this.projectCost = projectCost;
 	}
 	
+	public String toString() {
+		return "Project [Project Name " + this.projectName + ", Project Costs " + this.projectCost + "]";
+	}
 	
+	public boolean equals(String s1) {
+		if(this.getProjectName().equalsIgnoreCase(s1)) {
+			return true;
+		}
+		return false;
+	}
+	public boolean equals(Project p1) {
+		if(this.getProjectName().equalsIgnoreCase(p1.getProjectName()) && this.getProjectCost() == this.getProjectCost()) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public int compareTo(Project p1) {
+		
+		return 1;
+	}
 	
 }

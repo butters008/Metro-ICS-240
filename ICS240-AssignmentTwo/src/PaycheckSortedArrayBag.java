@@ -10,7 +10,7 @@ public class PaycheckSortedArrayBag {
 	public void add (String payName, int payAmount) {
 		Paycheck compare = new Paycheck();
 		Paycheck p1 = new Paycheck(payName, payAmount);
-		//System.out.println(p1.toString()); //delete this for final
+		System.out.println(p1.toString()); //delete this for final
 
 		if(numPaychecks == 0) {
 			paycheck[0] = p1;
@@ -38,6 +38,15 @@ public class PaycheckSortedArrayBag {
 			
 		}
 		return count;
+	}
+	
+	public String toString() {
+		String output = "";
+		Paycheck temp;
+		for (int i=0; i<numPaychecks; i++) {
+			output += paycheck[i].toString();	
+		}
+		return output;
 	}
 	
 	public void remove(Paycheck p1) {
