@@ -20,6 +20,7 @@ public class PaycheckSortedArrayBag {
 		else {
 			for(int i = 0; i < numPaychecks; i++) {
 				paycheck[i] = p1;
+				//put if in there
 			}
 //			if (compare.compareTo(p1) == 1) {
 //				compare = p1;
@@ -50,6 +51,7 @@ public class PaycheckSortedArrayBag {
 	}
 	
 	public void remove(Paycheck p1) {
+		//its goes off of the equals in Paycheck class
 		Paycheck tempArr[] = new Paycheck[paycheck.length];
 		for(int i = 0; i < numPaychecks; i++) {
 			if(paycheck[i] == p1) {

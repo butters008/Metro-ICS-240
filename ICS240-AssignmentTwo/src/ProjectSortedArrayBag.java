@@ -14,6 +14,10 @@ public class ProjectSortedArrayBag {
 		numProjects++;
 		System.out.println(p1.toString()); //delete this for final
 	}
+	
+	public String toString() {
+		return "";
+	}
 	public int indexOf(Project p1) {
 		int index = 0;
 		for (int i = 0; i < numProjects; i++) {
