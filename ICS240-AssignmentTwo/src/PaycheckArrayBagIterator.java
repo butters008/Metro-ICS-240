@@ -3,6 +3,7 @@ import java.util.Iterator;
 public class PaycheckArrayBagIterator implements Iterator<Paycheck> {
 
 	@Override
+	//mimic the peek
 	public boolean hasNext() {
 		// TODO Auto-generated method stub
 		return false;

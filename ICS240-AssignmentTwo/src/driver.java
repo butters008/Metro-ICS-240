@@ -19,16 +19,16 @@ public class driver {
 		test.add("Bark 1", 60);
 		test.add("Quack", 55);
 		test.add("Dumb", 60);
-		test.add("Please", 55);
-		test.add("Work", 100);
-		test.add("finally", 605);
-		test.add("Fire Force", 360);
-		Paycheck index = new Paycheck("Please", 55);
-		Paycheck delete = new Paycheck("Quack", 55);
-		Paycheck oldThing = new Paycheck("Please", 55);
-		Paycheck newThing = new Paycheck("FartFart", 99);
+//		test.add("Please", 55);
+//		test.add("Work", 100);
+//		test.add("finally", 605);
+//		test.add("Fire Force", 360);
+//		Paycheck index = new Paycheck("Please", 55);
+//		Paycheck delete = new Paycheck("Quack", 55);
+//		Paycheck oldThing = new Paycheck("Please", 55);
+//		Paycheck newThing = new Paycheck("FartFart", 99);
 		
-		System.out.println(test.size());
+//		System.out.println(test.size());
 		
 //		System.out.println("Testing toString " + test.toString());
 //		System.out.println("Found the object at index " + test.indexOf(index) + "\n");
@@ -36,8 +36,21 @@ public class driver {
 //		System.out.println(test.toString());
 //		System.out.println(test.grab(2));
 //		System.out.println(test.total());
-		test.replace(oldThing, newThing);
-		System.out.println(test.toString());
+//		test.countOccurance("Quack");
+//		test.replace(oldThing, newThing);
+//		System.out.println(test.toString());
+		
+		PaycheckSortedArrayBag test1 = new PaycheckSortedArrayBag(10);
+		test.add("Bark 1", 60);
+		test.add("Quack", 55);
+		test.add("Dumb", 60);
+//		test.add("Please", 55);
+//		test.add("Work", 100);
+//		test.add("finally", 605);
+//		test.add("Fire Force", 360);
+		
+		System.out.println(test.sameContents(test1));
+		
 	}
 
 }
