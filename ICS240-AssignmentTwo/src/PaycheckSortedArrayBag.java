@@ -2,32 +2,42 @@
 public class PaycheckSortedArrayBag {
 	private int numPaychecks = 0; //initializing to 0 here for add function this should be more than Paycheck
 	private Paycheck[] paycheck;
-
+	
+	//Putting this out here for now
+	Paycheck compare = new Paycheck();
+	
 	public PaycheckSortedArrayBag(int numPaychecks) {
 		this.paycheck = new Paycheck[numPaychecks];
 	}
 	
 	public void add (String payName, int payAmount) {
-		Paycheck compare = new Paycheck();
+
 		Paycheck p1 = new Paycheck(payName, payAmount);
 		System.out.println(p1.toString()); //delete this for final
 
 		if(numPaychecks == 0) {
 			paycheck[0] = p1;
 			numPaychecks++;
-			compare = p1;
+			compare = p1;		
+			System.out.println("\nThis is the compare: " + compare.toString() + "\n"); //delete this for final
 		}
-		else {
-			for(int i = 0; i < numPaychecks; i++) {
-				paycheck[i] = p1;
+		else {			
+//			paycheck[numPaychecks] = p1;
+//			numPaychecks++;
+			
+			if(compare.compareTo(p1) < 0) {
+				System.out.println("In the IF\n");
+				compare = p1;
+				System.out.println("Compare object is now: " + compare);
+				paycheck[numPaychecks] = p1;
+				numPaychecks++;
 			}
-//			if (compare.compareTo(p1) == 1) {
-//				compare = p1;
-//			}
-//			if (compare.compareTo(p1) == -1) {
-//
-//			}
-			numPaychecks++;
+			else {
+				System.out.println("In the ELSE\n");
+				paycheck[numPaychecks] = p1;
+				numPaychecks++;
+			}
+		
 		}
 	}
 	
@@ -41,22 +51,93 @@ public class PaycheckSortedArrayBag {
 	}
 	
 	public String toString() {
-		String output = "";
-		Paycheck temp;
+		String output = "The Array has: \n";
 		for (int i=0; i<numPaychecks; i++) {
-			output += paycheck[i].toString();	
+			output += paycheck[i] + " \n";
 		}
 		return output;
 	}
 	
-	public void remove(Paycheck p1) {
-		Paycheck tempArr[] = new Paycheck[paycheck.length];
+	public int indexOf(Paycheck p1) {
+		int indexNumber = 0;
 		for(int i = 0; i < numPaychecks; i++) {
-			if(paycheck[i] == p1) {
+			if(paycheck[i].getCheckName() == p1.getCheckName()) {
+				break;				
+			}
+			indexNumber++; //accidently works, since index actually starts at 0
+		}
+		return indexNumber;
+	}
+	
+	public void remove(Paycheck p1) {
+		Paycheck[] tempArr = new Paycheck[paycheck.length - 1];
+		for(int i = 0, k = 0; i < numPaychecks; i++) {
+			if(paycheck[i].getCheckName() == p1.getCheckName() && paycheck[i].getCheckAmount() == p1.getCheckAmount()) {
+				continue;
+			}
+			else {
+				tempArr[k++] = paycheck[i];
+				
+			}
+		}
+		paycheck = tempArr;
+		return;
+	}
+	
+	//TODO: need ask him if this is right, does this really only search for the name of a object and return the index
+	public int countOccurance(String name) {
+		int indexNumber = 0;
+		for(int i = 0; i < numPaychecks; i++) {
+			if(paycheck[i].getCheckName() == name) {
 				System.out.println("found it");
+				break;				
+			}
+			indexNumber++; //accidently works, since index actually starts at 0
+		}
+		return indexNumber;
+	}
+	
+	
+	//TODO: need to work on this, it returning null when it should be returning object toString
+	public String grab(int index) {
+		String output = "";
+		for(int i = 0; i < index; i++) {
+			if(i == index) {
+				output = paycheck[i].toString();
+				System.out.println(output);
+			}
+		}
+		return output;
+	}
+	
+	public int total() {
+		int total = 0;
+		for(int i = 0; i < numPaychecks; i++) {
+			if(paycheck[i] == null) {
+				continue;
+			}
+			total += paycheck[i].getCheckAmount();
+		}
+		return total;
+	}
+	
+	public void replace(Paycheck oldThing, Paycheck newThing) {
+		for(int i = 0; i < numPaychecks; i++) {
+			if(paycheck[i].getCheckName().equals(oldThing.getCheckName()) && paycheck[i].getCheckAmount() == oldThing.getCheckAmount()) {
+				System.out.println("found it: " + paycheck[i]);
+				paycheck[i] = newThing;
+				System.out.println("changed it: " + paycheck[i]);
 			}
 		}
 	}
 	
-
+//	public boolean sameContents(PaycheckSortedArrayBag bag) {
+//		if() {
+//			return true;
+//		}
+//		else {
+//			return false;	
+//		}
+//	}
+	
 }//end of class
