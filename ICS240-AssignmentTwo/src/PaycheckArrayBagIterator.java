@@ -1,17 +1,28 @@
 import java.util.Iterator;
 
 public class PaycheckArrayBagIterator implements Iterator<Paycheck> {
+	private int cursor = 0;
 
 	@Override
+	//mimic the peek
 	public boolean hasNext() {
-		// TODO Auto-generated method stub
-		return false;
+		boolean output = false;
+		if (cursor < manyItems) {
+			output =  true;
+		}	
+		else{
+			output = false;
+		} 
+		return output;
+
 	}
 
 	@Override
 	public Paycheck next() {
-		// TODO Auto-generated method stub
-		return null;
+		Paycheck output = data[cursor];
+		cursor++;
+		return output;
+
 	}
 
 }

@@ -84,21 +84,17 @@ public class PaycheckSortedArrayBag {
 		return;
 	}
 	
-	//TODO: need ask him if this is right, does this really only search for the name of a object and return the index
 	public int countOccurance(String name) {
 		int indexNumber = 0;
 		for(int i = 0; i < numPaychecks; i++) {
 			if(paycheck[i].getCheckName() == name) {
-				System.out.println("found it");
-				break;				
+				indexNumber++;				
 			}
-			indexNumber++; //accidently works, since index actually starts at 0
 		}
 		return indexNumber;
 	}
 	
 	
-	//TODO: need to work on this, it returning null when it should be returning object toString
 	public String grab(int index) {
 		String output = "";
 		for(int i = 0; i < index; i++) {
@@ -110,6 +106,7 @@ public class PaycheckSortedArrayBag {
 		return output;
 	}
 	
+
 	public int total() {
 		int total = 0;
 		for(int i = 0; i < numPaychecks; i++) {
@@ -130,14 +127,51 @@ public class PaycheckSortedArrayBag {
 			}
 		}
 	}
+
 	
-//	public boolean sameContents(PaycheckSortedArrayBag bag) {
-//		if() {
-//			return true;
-//		}
-//		else {
-//			return false;	
-//		}
-//	}
+	//My way to grab elements out of array
+	public Paycheck grabElement(int index) {
+		Paycheck output = null;
+		for(int i = 0; i < index+1; i++) {
+			if(i >= index) {
+				output = paycheck[i];
+			}
+		}
+		return output;
+	}
+
+	
+	
+	//TODO: Need to figure out the contents of this method
+	public boolean sameContents(PaycheckSortedArrayBag bag) {
+		boolean same = false;
+		System.out.println(bag.size());
+		System.out.println("________________________________________________");
+		System.out.println("INSIDE METHOD BEFORE LOOP");
+		//FOR LOOP 1
+		for(int i = 0; i < numPaychecks; i++) {
+			Paycheck toBeChecked = paycheck[i];
+			//FOR LOOP 2 - WTF!!!!!
+			for(int k = 0; k < bag.size(); k++) {
+				System.out.println("BEFORE LOGIC");
+				if(toBeChecked.equals(bag.grabElement(k))) {
+					System.out.println(bag.grabElement(k).toString());
+					System.out.println(paycheck[i]);
+					same = true;
+					System.out.println("IF " + same + "\n");
+					break;
+
+				}
+				else 
+				{
+					same = false;
+					System.out.println("ELSE " + same + "\n");
+				}
+			}//end of loop 2
+
+		}//end of loop 1
+		System.out.println("RETURN " + same);
+		return same;
+	}//END OF METHOD
 	
 }//end of class
