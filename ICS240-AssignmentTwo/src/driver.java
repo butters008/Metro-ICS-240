@@ -15,11 +15,11 @@ public class driver {
 //		System.out.println("Comparing p3 to p4 " + p3.compareTo(p4) + "\n");
 //		System.out.println("Comparing p3 to p2 " + p3.compareTo(p2) + "\n");
 
-		PaycheckSortedArrayBag test = new PaycheckSortedArrayBag(10);
-		test.add("Bark 1", 60);
-		test.add("Quack", 55);
-		test.add("Dumb", 60);
-//		test.add("Please", 55);
+		PaycheckSortedArrayBag bag1 = new PaycheckSortedArrayBag(10);
+		bag1.add("Bark 1", 60);
+		bag1.add("Quack", 55);
+		bag1.add("Dumb", 60);
+//		bag1.add("Please", 55);
 //		test.add("Work", 100);
 //		test.add("finally", 605);
 //		test.add("Fire Force", 360);
@@ -28,7 +28,7 @@ public class driver {
 //		Paycheck oldThing = new Paycheck("Please", 55);
 //		Paycheck newThing = new Paycheck("FartFart", 99);
 		
-//		System.out.println(test.size());
+		System.out.println(bag1.size());
 		
 //		System.out.println("Testing toString " + test.toString());
 //		System.out.println("Found the object at index " + test.indexOf(index) + "\n");
@@ -40,16 +40,17 @@ public class driver {
 //		test.replace(oldThing, newThing);
 //		System.out.println(test.toString());
 		
-		PaycheckSortedArrayBag test1 = new PaycheckSortedArrayBag(10);
-		test.add("Bark 1", 60);
-		test.add("Quack", 55);
-		test.add("Dumb", 60);
-//		test.add("Please", 55);
-//		test.add("Work", 100);
-//		test.add("finally", 605);
-//		test.add("Fire Force", 360);
 		
-		System.out.println(test.sameContents(test1));
+		PaycheckSortedArrayBag bag2 = new PaycheckSortedArrayBag(10);
+		bag2.add("Bark 1", 60);
+		bag2.add("Quack", 55);
+		bag2.add("Dumb", 60);
+//		test1.add("Please", 55);
+//		test1.add("Work", 100);
+//		test1.add("finally", 605);
+//		test1.add("Fire Force", 360);
+		
+		System.out.println(bag1.sameContents(bag2));
 		
 	}
 

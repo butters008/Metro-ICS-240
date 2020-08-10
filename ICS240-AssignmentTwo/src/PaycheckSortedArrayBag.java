@@ -96,20 +96,17 @@ public class PaycheckSortedArrayBag {
 	
 	
 	public String grab(int index) {
-		String output = "Not Found";
-		System.out.println(index);
-		for(int i = 0; i < index+1; i++) {
-			if(i >= index) {
-				System.out.println("IF");
-				return paycheck[i].toString();
-			}
-			else {
-				System.out.println("ELSE");
+		String output = "";
+		for(int i = 0; i < index; i++) {
+			if(i == index) {
+				output = paycheck[i].toString();
+				System.out.println(output);
 			}
 		}
 		return output;
 	}
 	
+
 	public int total() {
 		int total = 0;
 		for(int i = 0; i < numPaychecks; i++) {
@@ -130,28 +127,51 @@ public class PaycheckSortedArrayBag {
 			}
 		}
 	}
+
+	
+	//My way to grab elements out of array
+	public Paycheck grabElement(int index) {
+		Paycheck output = null;
+		for(int i = 0; i < index+1; i++) {
+			if(i >= index) {
+				output = paycheck[i];
+			}
+		}
+		return output;
+	}
+
+	
 	
 	//TODO: Need to figure out the contents of this method
-//	public boolean sameContents(PaycheckSortedArrayBag bag) {
-//		boolean same = false;
-//		System.out.println("INSIDE METHOD BEFORE LOOP");
-//		//check name and amount for this and bag
-//		for(int i = 0; i < paycheck.length; i++) {
-//			System.out.println("LOOP 1");
-//			if(bag.equals(paycheck[i])) {
-//				same = true;
-//				System.out.println("IF");
-//			}
-//			else {
-//				same = false;	
-//				System.out.println("ELSE");
-//			}
-////			for(int k = 0; k < bag.size(); k++) {
-////				System.out.println("LOOP 2");
-////								
-////			}
-//		}
-//		return same;
-//	}
+	public boolean sameContents(PaycheckSortedArrayBag bag) {
+		boolean same = false;
+		System.out.println(bag.size());
+		System.out.println("________________________________________________");
+		System.out.println("INSIDE METHOD BEFORE LOOP");
+		//FOR LOOP 1
+		for(int i = 0; i < numPaychecks; i++) {
+			Paycheck toBeChecked = paycheck[i];
+			//FOR LOOP 2 - WTF!!!!!
+			for(int k = 0; k < bag.size(); k++) {
+				System.out.println("BEFORE LOGIC");
+				if(toBeChecked.equals(bag.grabElement(k))) {
+					System.out.println(bag.grabElement(k).toString());
+					System.out.println(paycheck[i]);
+					same = true;
+					System.out.println("IF " + same + "\n");
+					break;
+
+				}
+				else 
+				{
+					same = false;
+					System.out.println("ELSE " + same + "\n");
+				}
+			}//end of loop 2
+
+		}//end of loop 1
+		System.out.println("RETURN " + same);
+		return same;
+	}//END OF METHOD
 	
 }//end of class
