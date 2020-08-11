@@ -1,7 +1,9 @@
+import java.util.Iterator;
 
-public class PaycheckSortedArrayBag {
+public class PaycheckSortedArrayBag implements Iterator<Paycheck> {
 	private int numPaychecks = 0; //initializing to 0 here for add function this should be more than Paycheck
 	private Paycheck[] paycheck;
+	private int cursor = 0;
 	
 	//Putting this out here for now
 	Paycheck compare = new Paycheck();
@@ -174,4 +176,30 @@ public class PaycheckSortedArrayBag {
 		return same;
 	}//END OF METHOD
 	
+	@Override
+	//mimic the peek
+	public boolean hasNext() {
+		boolean output = false;
+		if (cursor < numPaychecks) {
+			output = true;
+		}	
+		else{
+			output = false;
+		}
+		return output;
+
+	}
+
+	@Override
+	public Paycheck next() {
+		Paycheck output = paycheck[cursor];
+		cursor++;
+		return output;
+
+	}
+
+		
 }//end of class
+
+
+

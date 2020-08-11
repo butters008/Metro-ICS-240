@@ -51,6 +51,9 @@ public class driver {
 //		test1.add("Fire Force", 360);
 		
 		System.out.println(bag1.sameContents(bag2));
+		System.out.println(bag1.next());
+		System.out.println(bag1.next());
+		
 		
 	}
 
