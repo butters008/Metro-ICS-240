@@ -3,9 +3,9 @@ public class Paycheck implements Comparable <Paycheck>
 {
 	private String paycheckName;
 	private int paycheckAmount;
+	private int cursor;
 
 	public Paycheck(String paycheckName, int paycheckAmount) {
-		// TODO Auto-generated constructor stub
 		this.paycheckName = paycheckName;
 		this.paycheckAmount = paycheckAmount;
 	}
@@ -41,8 +41,6 @@ public class Paycheck implements Comparable <Paycheck>
 
 	@Override
 	public int compareTo(Paycheck compareObj) {
-		// TODO Auto-generated method stub
-		
 		//if the name this.name is Adam and p1 is Keith - it would ring -num so return -1 
 		if(this.getPaycheckName().compareTo(compareObj.getPaycheckName()) < 0) {
 			System.out.println("This is the -1");
@@ -67,6 +65,5 @@ public class Paycheck implements Comparable <Paycheck>
 		}
 		
 	}
-
 	
 }//end of the class
