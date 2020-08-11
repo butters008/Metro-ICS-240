@@ -35,9 +35,11 @@ public class ThingLinkedBagDriver {
 		PaycheckNode head = new PaycheckNode(p3,n2);
 		PaycheckNode newHead = new PaycheckNode(p4,head);
 
+		PaycheckLinkedBag bag = new PaycheckLinkedBag();
 
 		PaycheckNode cursor = newHead;
 		System.out.println(cursor.getData());
+		System.out.println("\n"+bag.size());
 		cursor.print(cursor);
 		System.out.println("\n\nAfter Add");
 		cursor.addNodeAfter(p5);
@@ -45,7 +47,7 @@ public class ThingLinkedBagDriver {
 		System.out.println("\n\nAfter Remove");
 		cursor.removeNodeAfter(p4);
 		cursor.print(cursor);
-		
+
 		
 	}
 
