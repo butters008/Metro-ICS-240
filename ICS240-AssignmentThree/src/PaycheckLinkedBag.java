@@ -1,7 +1,6 @@
 
 public class PaycheckLinkedBag {
 	private PaycheckNode head;
-	private PaycheckNode tail; //from Udemy movie
 	private int manyItems;
 	
 	public PaycheckLinkedBag(PaycheckNode head) {
@@ -10,14 +9,7 @@ public class PaycheckLinkedBag {
 	}
 	
 	public int size() {
-		int counter = 0;
-		PaycheckNode cursor = head;
-		while(cursor != null) {
-			counter++;
-			cursor = cursor.getLink();
-		}
-		return counter;
-		//return manyItems //once we add the add method
+		return manyItems;
 	}
 	
 	public void display() {
@@ -39,7 +31,7 @@ public class PaycheckLinkedBag {
 	
 	public void add (int position, Paycheck node) {
 		PaycheckNode cursor = head;
-		PaycheckNode newNode = new PaycheckNode(); //create newNode
+		PaycheckNode newNode = new PaycheckNode(); 
 		int counter = 0;
 
 		while (cursor != null){
@@ -59,7 +51,7 @@ public class PaycheckLinkedBag {
 	public void addLast (Paycheck node) {
 		PaycheckNode cursor = head;
 		PaycheckNode temp = new PaycheckNode();
-		PaycheckNode newNode = new PaycheckNode(node, null); //create newNode		
+		PaycheckNode newNode = new PaycheckNode(node, null); 	
 		
 		while (cursor != null){
 			temp = cursor;
@@ -168,8 +160,6 @@ public class PaycheckLinkedBag {
 	
 	public void set(int position, Paycheck node) {
 		PaycheckNode cursor = head;
-		PaycheckNode temp;
-		PaycheckNode newNode = new PaycheckNode(); //create newNode
 		int counter = 0;
 
 		while (cursor != null){
@@ -206,7 +196,6 @@ public class PaycheckLinkedBag {
 		}else{
 			return temp;
 		}
-		
 		while(cursor != null) {
 			if (cursor.getData().getPaycheckAmount() > compare.getData().getPaycheckAmount()) {
 				temp = cursor.getData();

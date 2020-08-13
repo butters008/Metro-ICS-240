@@ -48,16 +48,13 @@ public class Paycheck implements Comparable <Paycheck>
 	public int compareTo(Paycheck compareObj) {
 		//if the name this.name is Adam and p1 is Keith - it would ring -num so return -1 
 		if(this.getPaycheckName().compareTo(compareObj.getPaycheckName()) < 0) {
-			System.out.println("This is the -1");
 			return -1;
 		}
 		//if the name this.name is Adam and p1 is Keith - it would ring -num so return 1 
 		if(this.getPaycheckName().compareTo(compareObj.getPaycheckName()) > 0) {
-			System.out.println("This is the 1");
 			return 1;			
 		}
 		else {
-			System.out.println("This is the 0");
 			if(this.getPaycheckAmount() > compareObj.getPaycheckAmount()) {
 				return 1;							
 			}

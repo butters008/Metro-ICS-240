@@ -9,7 +9,6 @@ public class PaycheckNode {
 	}
 	
 	public PaycheckNode() {
-		// TODO Auto-generated constructor stub
 		this.data = null;
 		this.link = null;
 	}
@@ -37,10 +36,7 @@ public class PaycheckNode {
 		}
 	}
 	
-	//TODO: Need to modify all of these methods	
-	//TODO - not being called
 	public static int listLength(PaycheckNode head){
-		
 		PaycheckNode cursor = head;
 		int answer = 0;
 		
@@ -55,7 +51,6 @@ public class PaycheckNode {
 	
 
 	public static PaycheckNode listSearch(PaycheckNode head, int target){
-		
 		PaycheckNode cursor = head;
 		int counter = 0;
 		
@@ -68,12 +63,10 @@ public class PaycheckNode {
 				counter++;
 			}
 		}
-		
 		return null;
 	}
 	
 	public static PaycheckNode listPosition(PaycheckNode head, int position){
-		
 		PaycheckNode cursor = head;
 		int index = 1;
 		
@@ -82,6 +75,5 @@ public class PaycheckNode {
 			cursor = cursor.getLink();
 		}		
 		return cursor;
-		
 	}
 }
