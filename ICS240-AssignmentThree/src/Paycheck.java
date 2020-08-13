@@ -2,13 +2,18 @@
 public class Paycheck implements Comparable <Paycheck> 
 {
 	private String paycheckName;
-	private int paycheckAmount;
-	private int cursor;
+	private int paycheckAmount; //aggregate
+	//private int cursor;
 
 	public Paycheck(String paycheckName, int paycheckAmount) {
 		this.paycheckName = paycheckName;
 		this.paycheckAmount = paycheckAmount;
 	}
+
+	public Paycheck() {
+		// TODO Auto-generated constructor stub
+	}
+
 
 	public String getPaycheckName() {
 		return paycheckName;
